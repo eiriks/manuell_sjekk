@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Artikkel nr. {{ article['docid'] }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='pure-min.css') }}"/>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="controls">
+	<a class="pure-button" href="{{ url_for('article', did=article['prev']) }}">Forrige</a>
+	{% if article['saved'] %}
+	<a class="pure-button button-error" href="{{ url_for('remove', did=article['docid']) }}">Fjern</a>
+	{% else %}
+	<a class="pure-button pure-button-primary" href="{{ url_for('save', did=article['docid']) }}">Lagre</a>
+	{% endif %}
+	<a class="pure-button" href="{{ url_for('article', did=article['next']) }}">Neste</a>
+      </div>
+      <div class="article">
+	<h1 class="title">{{ article['title'] | mark_search_words | safe }}</h1>
+	<div class="body">
+	  {% for line in article['body'].split('\n')[1:] %}
+	  <p>{{ line | mark_search_words | safe }}</p>
+	  {% endfor %}
+	</div>
+      </div>
+    </div>
+</html>

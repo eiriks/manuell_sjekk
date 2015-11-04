@@ -1,0 +1,22 @@
+* README
+  Script that sets up a webpage to make it easier to manually check
+  classified text.
+
+* How to use
+
+  Right now, the program is not very general and made specifically for
+  one purpose. What it does is that in =setup()= it loads all the
+  articles that match a search into memory. It then serves those
+  sequentially to the user who presses save or just next.
+
+  Each page has the search terms marked in =mark_search_words()=.
+
+* Requirements
+
+  - Python3
+    - Flask
+  - SQLite3 (With full-text search (FTS) enabled )
+
+
+  SQLite3 can be built with fts using homebrew if you are on a mac or
+  from source.
