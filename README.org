@@ -16,7 +16,12 @@
   - Python3
     - Flask
   - SQLite3 (With full-text search (FTS) enabled )
+  - pymongo
 
 
   SQLite3 can be built with fts using homebrew if you are on a mac or
   from source.
+
+* Notice
+  This version has been (mis)treated by Eirik. Original version
+  at https://github.com/ljos/manuell_sjekk

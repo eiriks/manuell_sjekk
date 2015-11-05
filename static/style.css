@@ -24,7 +24,14 @@ h1 {
 span {
     background-color: yellow;
 }
-
+.oko {
+    background-color: green;
+    color: white;
+}
+.spo {
+    background-color: orange;
+    color: white;
+}
 .button-error,
 .button-secondary {
     color: white;
