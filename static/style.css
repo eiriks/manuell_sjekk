@@ -46,7 +46,19 @@ span {
     background-color: red;
     color: white;
 }
-
+.vear {
+    background-color: SkyBlue;
+}
+.vit {
+    background-color: Silver;
+}
+.uly {
+    background-color: DimGray;
+    color: white;
+}
+.sos {
+    background-color: #33CC66;
+}
 .button-error,
 .button-secondary {
     color: white;

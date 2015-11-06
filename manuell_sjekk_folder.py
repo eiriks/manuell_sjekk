@@ -58,7 +58,7 @@ def setup():
     global articles
     # loop over all docs and fetch path as id
     global docids
-    cat = "KRIM"  #POL "HVER" "KULT" "SPO"  # "OKO"
+    cat = "SOS"  # ULY VIT VEAR KRIM POL "HVER" "KULT" "SPO"  # "OKO"
     start_folder = "../newsCat/NAK_2015_SORTED/%s/" % cat
     for i in os.listdir(start_folder):
         if i.endswith(".xml") or i.endswith(".txt"):

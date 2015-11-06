@@ -40,13 +40,36 @@ words['KRIM'] = ["politiet", "blålys", "narko", "svindle", "svindel",
                 "fengsel", "rettssak", "saksomkostning", "amfetamin",
                 "etterforskning", "varetekt", "pågripels", "beslagla",
                 "etterforske", "voldsavsnittet", "etterlyst", "vitnet",
-                "advokat", "lagmannsrett", "tingrett", "PST", "straffesak",
+                "advokat", "lagmannsrett", "tingrett", "straffesak",
                 "overgrep", "tyven", "justismord", "drapsvåpen", "retten",
                 "påtale", "kripos", "vitne", "tiltale", "stjele", "tyver",
                 "kriminelle", "kriminell", "dommen", "politianmel",
                 "høyesterett", "smugling", "ulovlig", "loven", "politidistrikt",
                 "politim", "politij", "politia", "rettssystem", "voldtekt",
-                "uaktsomhet", "bedrag", "drap", "politis", "krimin"]
+                "uaktsomhet", "bedrag", "drap", "politis", "krimin",
+                "legems"] // PST
+words['VEAR'] = ["torden", "lyn", "bris", "solskinn", "opphold", "snø", "vær",
+                "meteorolog", "nedbør", "uvær", "varmegrader", "kuldegrader",
+                "langtidsvarsel", "værvarsel", "temperatur", "sola",
+                "flomfare", "mild", "målestasjon", "varmebø"]
+words['VIT'] = ["forsker", "nasa", "universit", "høyskole", "forsøkene", "NTNU",
+                "uio", "uib", "uis"]
+words['ULY'] = ["ulykke", "flodbølge", "skjelvet", "richter", "overlevende",
+                "katastrofe"]
+words['SOS'] = ["skole", "helse", "levekår", "nav", "psyki", "arbeids",
+                "streik", "rusom", "innvandring", "assimilering", "FN",
+                "miljøv", "klima", "funksjonsevne", "rullestol",
+                "hjelpemiddel", "skule", "handikap", "legesenter",
+                "sykehus", "omsorg", "klinikk", "kreft", "sjukehus",
+                "medisin", "fysio", "helsa", "kiroprak", "pasient",
+                "diagnos"]
+// create a legend
+var $legend = $("<div>", {id: "legend", style:"width:150px;float:left;"})
+for (k in words) {
+    $legend.append($('<li>', {text: k, class:k.toLowerCase()}));
+}
+$('body').prepend($legend);
+
 
 $('.body p').each(function(){
     var ord = $(this).text();
@@ -64,7 +87,7 @@ $('.body p').each(function(){
             if ($.inArray(ord[i].toLowerCase(), words[k]) > -1) {
                 ord[i] = '<span class="'+k.toLowerCase()+'">'+ord[i]+'</span>';
             } else if ($.isEmptyObject(fuzzymatches) == false && ord[i].length > 2) {
-                console.log(fuzzymatches, ord[i], k)
+                // console.log(fuzzymatches, ord[i], k)
                 ord[i] = '<span class="'+k.toLowerCase()+'">'+ord[i]+'</span>';
             }
         }
