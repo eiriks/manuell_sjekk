@@ -32,6 +32,21 @@ span {
     background-color: orange;
     color: white;
 }
+.kult {
+    background-color: pink;
+    color: white;
+}
+.hver {
+    background-color: Beige;
+}
+.pol {
+    background-color: gold;
+}
+.krim {
+    background-color: red;
+    color: white;
+}
+
 .button-error,
 .button-secondary {
     color: white;

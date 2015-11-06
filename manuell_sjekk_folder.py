@@ -58,7 +58,7 @@ def setup():
     global articles
     # loop over all docs and fetch path as id
     global docids
-    cat = "SPO"  # "OKO"
+    cat = "KRIM"  #POL "HVER" "KULT" "SPO"  # "OKO"
     start_folder = "../newsCat/NAK_2015_SORTED/%s/" % cat
     for i in os.listdir(start_folder):
         if i.endswith(".xml") or i.endswith(".txt"):
@@ -76,7 +76,6 @@ def setup():
                            'prev': (docids.index(i)-1) % len(docids),  # docids[(docids.index(i)-1) % len(docids)]
                            'next': (docids.index(i)+1) % len(docids)
                            }
-
 # @app.add_template_filter
 # def mark_search_words(line):
 #     line = re.sub(r'(?i)\b(lofot\w*|vesterål\w*|senja)\b',
@@ -117,7 +116,7 @@ def remove(did):
 def article(did):
     global articles
     global docids
-    # print(articles[docids[did]])
+    print(articles[docids[did]])
     return render_template('article_2.xhtml', article=articles[docids[did]])
 
 @app.route('/')
